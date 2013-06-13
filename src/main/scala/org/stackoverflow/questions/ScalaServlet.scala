@@ -1,9 +1,9 @@
-package org.peat.scalaservlet
+package org.stackoverflow.questions
 
 import javax.servlet.http._
 import javax.servlet._
 
-class Example extends HttpServlet {
+class ScalaServlet extends HttpServlet {
 
   override def doGet(request: HttpServletRequest, response: HttpServletResponse) = response.getWriter().println( exampleContent )
 
