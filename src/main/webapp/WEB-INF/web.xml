@@ -12,5 +12,15 @@
     <servlet-name>ScalaServlet</servlet-name>
     <url-pattern>/servlet/scala</url-pattern>
   </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ScalaServlet</servlet-name>
+        <servlet-class>org.stackoverflow.questions.GroovyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScalaServlet</servlet-name>
+        <url-pattern>/servlet/groovy</url-pattern>
+    </servlet-mapping>
   
 </web-app>
