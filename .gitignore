@@ -1,0 +1,8 @@
+.sass-cache
+*.class
+build.properties
+target
+/static/js/*
+/static/css/stylesheets/*
+.idea
+ngenix.www.iml

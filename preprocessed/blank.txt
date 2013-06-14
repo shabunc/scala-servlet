@@ -1,0 +1,1 @@
+there is no such thing like empty folder in git
