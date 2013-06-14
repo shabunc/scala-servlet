@@ -7,17 +7,17 @@
 <urlrewrite>
 
     <rule>
-        <from>^/groovy/redirect$</from>
+        <from>^/groovy/rewrite$</from>
         <run class="org.shabunc.servlets.GroovyServlet" method="ping" />
     </rule>
 
     <rule>
-        <from>^/java/redirect$</from>
+        <from>^/java/rewrite$</from>
         <run class="org.shabunc.servlets.JavaServlet" method="ping" />
     </rule>
 
     <rule>
-        <from>^/scala/redirect$</from>
+        <from>^/scala/rewrite$</from>
         <run class="org.shabunc.servlets.ScalaServlet" method="ping" />
     </rule>
 
