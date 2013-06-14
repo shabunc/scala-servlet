@@ -1,55 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://java.sun.com/xml/ns/javaee" 
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    id="ngenix.www" version="2.5">
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-    <context-param>
-        <description>где лежит наша статика</description>
-        <param-name>PathToStatic</param-name>
-        <param-value>/static/shabunc/ngenix.www</param-value>
-    </context-param>
+<web-app>
+  <display-name>Testing UrlRewriteFilter</display-name>
+
+  <servlet>
+    <servlet-name>ScalaServlet</servlet-name>
+    <servlet-class>org.shabunc.servlets.ScalaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScalaServlet</servlet-name>
+    <url-pattern>/scala</url-pattern>
+  </servlet-mapping>
+
 
     <servlet>
-        <servlet-name>Groovy</servlet-name>
-        <servlet-class>groovy.servlet.GroovyServlet</servlet-class>
+        <servlet-name>GroovyServlet</servlet-name>
+        <servlet-class>org.shabunc.servlets.GroovyServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>Groovy</servlet-name>
-        <url-pattern>*.groovy</url-pattern>
+        <servlet-name>GroovyServlet</servlet-name>
+        <url-pattern>/groovy</url-pattern>
     </servlet-mapping>
 
 
     <servlet>
-        <servlet-name>GroovyTemplate</servlet-name>
-        <servlet-class>groovy.servlet.TemplateServlet</servlet-class>    
-        <init-param>
-            <param-name>groovy.source.encoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
+        <servlet-name>JavaServlet</servlet-name>
+        <servlet-class>org.shabunc.servlets.JavaServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>GroovyTemplate</servlet-name>
-        <url-pattern>*.gsp</url-pattern>
+        <servlet-name>JavaServlet</servlet-name>
+        <url-pattern>/java</url-pattern>
     </servlet-mapping>
-
-
-  <!--
-  <resource-ref>
-    <description>CMS datasource</description>
-    <res-ref-name>jdbc/cms</res-ref-name>
-    <res-type>javax.sql.DataSource</res-type>
-    <res-auth>Container</res-auth>
-  </resource-ref>
-  -->
 
    <!-- IMPORTANT: this filter should be places after CAS filters, otherwise you won't see remoteUser in forwarded pages -->
-   <!--
-    -->
     <filter>
         <filter-name>UrlRewriteFilter</filter-name>
         <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
@@ -60,5 +45,5 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
-
+  
 </web-app>
