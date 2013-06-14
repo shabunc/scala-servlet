@@ -7,8 +7,8 @@
 <urlrewrite>
 
     <rule>
-        <from>^/api/send$</from>
-        <run class="org.ngenix.www.servlets.FeedbackServlet" method="send" />
+        <from>^/ping$</from>
+        <run class="org.shabunc.servlets.GroovyServlet" method="ping" />
     </rule>
 
 </urlrewrite>
