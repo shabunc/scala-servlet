@@ -23,10 +23,6 @@ public class JavaServlet extends HttpServlet {
 
     public void ping(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter out = resp.getWriter();
-
-        out.println("Hello world, from a Java servlet!");
-        out.flush();
-        out.close();
-
+        resp.getWriter().println("Hello world, from a Java servlet!");
     }
 }

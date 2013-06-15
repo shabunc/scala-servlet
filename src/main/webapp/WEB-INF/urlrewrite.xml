@@ -9,16 +9,19 @@
     <rule>
         <from>^/groovy/rewrite$</from>
         <run class="org.shabunc.servlets.GroovyServlet" method="ping" />
+        <to>null</to>
     </rule>
 
     <rule>
         <from>^/java/rewrite$</from>
         <run class="org.shabunc.servlets.JavaServlet" method="ping" />
+        <to>null</to>
     </rule>
 
     <rule>
         <from>^/scala/rewrite$</from>
         <run class="org.shabunc.servlets.ScalaServlet" method="ping" />
+        <to>null</to>
     </rule>
 
 </urlrewrite>

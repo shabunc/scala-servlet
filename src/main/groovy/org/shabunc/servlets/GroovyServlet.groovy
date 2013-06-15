@@ -20,10 +20,7 @@ class GroovyServlet extends HttpServlet {
 
     void ping(HttpServletRequest req, HttpServletResponse resp) {
         PrintWriter out = resp.getWriter()
-
         out.println("Hello world, from a Groovy servlet!")
-        out.close()
-
     }
 
 }
